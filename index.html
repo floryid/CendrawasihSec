@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CendrawasihSec</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Modern Professional Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="image/cendrawasih.png" alt="CendrawasihSec Logo" class="me-2">
+                <span>CendrawasihSec</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                            <i class="fas fa-shield-alt me-1"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-project-diagram me-1"></i>Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gdork.html"><i class="fas fa-bug me-2"></i>Google Dork</a></li>
+                            <li><a class="dropdown-item" href="SQL.html"><i class="fas fa-sword me-2"></i>SQL Injections</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-shield me-2"></i>Defensive</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-plus me-2"></i>More Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" action="https://www.google.com/search" method="GET" target="_blank">
+                    <div class="input-group">
+                        <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section with Matrix Effect -->
+        <section id="home" class="bg-dark">
+            <div class="matrix-bg"></div>
+            <div class="container">
+                <div class="row min-vh-100 align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <div class="hero-content glitch-container">
+                            <h1 class="glitch-text mb-4" data-text="Professional Bug Hunter">Professional Bug Hunter</h1>
+                            <p class="cyber-text mb-4">Securing the digital world, one vulnerability at a time</p>
+                            <button class="btn btn-lg pulse-btn">
+                                <i class="fas fa-terminal me-2"></i>Get Started
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rest of your sections with updated styling -->
+        <!-- Featured Services -->
+        <section class="py-5 bg-dark">
+            <div class="container">
+                <h2 class="text-center text-success mb-5">Our Services</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card bg-dark border-success h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-bug text-success fa-3x mb-3"></i>
+                                <h3 class="card-title text-success">Bug Hunting</h3>
+                                <p class="card-text text-light">Professional vulnerability assessment and penetration testing services.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-dark border-success h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-shield-alt text-success fa-3x mb-3"></i>
+                                <h3 class="card-title text-success">Security Audit</h3>
+                                <p class="card-text text-light">Comprehensive security assessment of your web applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-dark border-success h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-code text-success fa-3x mb-3"></i>
+                                <h3 class="card-title text-success">Secure Development</h3>
+                                <p class="card-text text-light">Implementation of secure coding practices and solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row text-center g-4">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <i class="fas fa-trophy text-success fa-3x mb-3"></i>
+                            <h3 class="text-success counter">500+</h3>
+                            <p class="text-light">Vulnerabilities Found</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <i class="fas fa-users text-success fa-3x mb-3"></i>
+                            <h3 class="text-success counter">100+</h3>
+                            <p class="text-light">Satisfied Clients</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <i class="fas fa-certificate text-success fa-3x mb-3"></i>
+                            <h3 class="text-success counter">15+</h3>
+                            <p class="text-light">Security Certifications</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <i class="fas fa-project-diagram text-success fa-3x mb-3"></i>
+                            <h3 class="text-success counter">200+</h3>
+                            <p class="text-light">Projects Completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-5 bg-dark cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <div class="fade-in-up">
+                            <h2 class="text-success mb-4 display-4">Ready to Secure Your Application?</h2>
+                            <p class="text-light mb-4 lead">Let's work together to identify and fix security vulnerabilities in your systems.</p>
+                            <a href="contact.html" class="btn btn-outline-success btn-lg px-4 py-2">Contact Us Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

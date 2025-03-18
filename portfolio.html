@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Professional Bug Hunter</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">CendrawasihSec</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html">Service</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  My Project
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="gdork.html">Google Dork</a></li>
+                  <li><a class="dropdown-item" href="SQL.html">SQL Injection</a></li>
+                  <li><a class="dropdown-item" href="#">Deffensive</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search" action="https://www.google.com/search" method="GET" target="_blank">
+                <div class="input-group">
+                    <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        <!-- Portfolio Header -->
+        <section class="portfolio-header py-5 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="text-success mb-4">Security Portfolio</h1>
+                        <p class="text-light lead">Showcasing successful security assessments and vulnerability discoveries</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="py-5 bg-dark">
+            <div class="container">
+                <!-- Portfolio Filters -->
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-outline-success active">All</button>
+                            <button type="button" class="btn btn-outline-success">Web Security</button>
+                            <button type="button" class="btn btn-outline-success">Network Security</button>
+                            <button type="button" class="btn btn-outline-success">Mobile Security</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Items -->
+                <div class="row g-4">
+                    <!-- Portfolio Item 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item card bg-dark border-success">
+                            <img src="image/cendrawasih.png" class="card-img-top" alt="Project 1">
+                            <div class="card-body">
+                                <h4 class="card-title text-success">E-commerce Security Audit</h4>
+                                <p class="card-text text-light">Critical vulnerability assessment for a major e-commerce platform</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success">Web Security</span>
+                                    <button class="btn btn-outline-success btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item card bg-dark border-success">
+                            <img src="image/cendrawasi2.png" class="card-img-top" alt="Project 2">
+                            <div class="card-body">
+                                <h4 class="card-title text-success">Network Infrastructure Testing</h4>
+                                <p class="card-text text-light">Comprehensive network security assessment for banking system</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success">Network Security</span>
+                                    <button class="btn btn-outline-success btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item card bg-dark border-success">
+                            <img src="image/rangkok.png" class="card-img-top" alt="Project 3">
+                            <div class="card-body">
+                                <h4 class="card-title text-success">Mobile App Penetration Test</h4>
+                                <p class="card-text text-light">Security testing for a financial services mobile application</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge bg-success">Mobile Security</span>
+                                    <button class="btn btn-outline-success btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more portfolio items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-success text-center mb-5">Recognition & Achievements</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="achievement-card text-center">
+                            <i class="fas fa-award text-success fa-3x mb-3"></i>
+                            <h4 class="text-success">Hall of Fame</h4>
+                            <p class="text-light">Listed in multiple company security halls of fame</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="achievement-card text-center">
+                            <i class="fas fa-certificate text-success fa-3x mb-3"></i>
+                            <h4 class="text-success">Certifications</h4>
+                            <p class="text-light">Industry-recognized security certifications</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="achievement-card text-center">
+                            <i class="fas fa-trophy text-success fa-3x mb-3"></i>
+                            <h4 class="text-success">Bug Bounties</h4>
+                            <p class="text-light">Successfully completed numerous bug bounty programs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

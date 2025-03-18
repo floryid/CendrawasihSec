@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Professional Bug Hunter</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Modern Professional Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="image/cendrawasih.png" alt="CendrawasihSec Logo" class="me-2">
+                <span>CendrawasihSec</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                            <i class="fas fa-shield-alt me-1"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-project-diagram me-1"></i>Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gdork.html"><i class="fas fa-bug me-2"></i>Google Dork</a></li>
+                            <li><a class="dropdown-item" href="SQL.html"><i class="fas fa-sword me-2"></i>SQL Injection</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-shield me-2"></i>Defensive</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-plus me-2"></i>More Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" action="https://www.google.com/search" method="GET" target="_blank">
+                    <div class="input-group">
+                        <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        <!-- Contact Header with Matrix Effect -->
+        <section class="contact-header py-5 mt-5 bg-dark" id="contact-hero">
+            <div class="matrix-bg"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <div class="hero-content glitch-container">
+                            <h1 class="glitch-text typing-text mb-4" data-text="Get In Touch">Get In Touch</h1>
+                            <p class="cyber-text typing-text lead">Let's discuss how we can secure your digital assets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="py-5 bg-dark">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="contact-info text-center p-4">
+                            <i class="fas fa-envelope text-success fa-3x mb-3"></i>
+                            <h3 class="text-success">Email</h3>
+                            <p class="text-light">contact@bughunter.pro</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-info text-center p-4">
+                            <i class="fas fa-phone text-success fa-3x mb-3"></i>
+                            <h3 class="text-success">Phone</h3>
+                            <p class="text-light">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-info text-center p-4">
+                            <i class="fas fa-location-dot text-success fa-3x mb-3"></i>
+                            <h3 class="text-success">Location</h3>
+                            <p class="text-light">Jayapura, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Message Button Section -->
+        <section class="message-button-section py-5 text-center">
+            <button id="showMessageForm" class="btn btn-outline-success btn-lg mb-5">
+                <i class="fas fa-envelope-open me-2"></i>Leave a Message Here
+            </button>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="py-5" id="contactFormSection" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card bg-dark border-success">
+                            <div class="card-body p-5">
+                                <h2 class="text-success text-center mb-4">Send Message</h2>
+                                <form id="contactForm">
+                                    <div class="row g-4">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg-dark text-light border-success" placeholder="Your Name" required name="name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control bg-dark text-light border-success" placeholder="Your Email" required name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control bg-dark text-light border-success" placeholder="Subject" required name="subject">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <textarea class="form-control bg-dark text-light border-success" rows="5" placeholder="Your Message" required name="message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <button type="submit" class="btn btn-outline-success btn-lg">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- Success Message Popup -->
+                                <div class="success-message text-center">
+                                    <i class="fas fa-check-circle"></i>
+                                    <h3 class="text-success mb-3">Message Sent Successfully!</h3>
+                                    <p class="text-light">Thank you for contacting us. We'll get back to you soon.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Links -->
+        <section class="py-5 bg-dark">
+            <div class="container">
+                <h2 class="text-success text-center mb-4">Connect With Me</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="social-links text-center">
+                            <a href="#" class="btn btn-outline-success mx-2 mb-2">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="#" class="btn btn-outline-success mx-2 mb-2">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-outline-success mx-2 mb-2">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <a href="#" class="btn btn-outline-success mx-2 mb-2">
+                                <i class="fab fa-medium"></i> Medium
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Add these before closing body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showMessageForm = document.getElementById('showMessageForm');
+            const contactFormSection = document.getElementById('contactFormSection');
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.querySelector('.success-message');
+
+            showMessageForm.addEventListener('click', function() {
+                contactFormSection.style.display = 'block';
+                setTimeout(() => {
+                    contactFormSection.classList.add('form-visible');
+                }, 50);
+                showMessageForm.style.display = 'none';
+            });
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                contactForm.classList.add('form-submitted');
+                setTimeout(() => {
+                    successMessage.classList.add('show');
+                }, 500);
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    contactForm.classList.remove('form-submitted');
+                    contactForm.reset();
+                }, 3000);
+            });
+        });
+
+        (function() {
+            emailjs.init("AIzaSyA4sl2nNwZUxA4iqkm3D8Puy0VgYvAkgmw"); // Add your EmailJS public key here
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Dork Cheat Sheet - CendrawasihSec</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #28a745;
+            --primary-glow: rgba(40, 167, 69, 0.2);
+            --dark-bg: rgba(33, 37, 41, 0.85);
+            --card-bg: rgba(33, 37, 41, 0.85);
+        }
+
+        body {
+            background: #121212;
+            color: #fff;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .navbar {
+            background: var(--dark-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--primary-glow);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+        }
+
+        .navbar-toggler {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            color: #fff !important;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+            background: rgba(40, 167, 69, 0.1);
+        }
+
+        .dropdown-menu {
+            background: var(--dark-bg);
+            border: 1px solid var(--primary-glow);
+            backdrop-filter: blur(10px);
+        }
+
+        .dropdown-item {
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover, .dropdown-item.active {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--primary-color);
+        }
+
+        .dork-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--primary-glow);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dork-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px var(--primary-glow);
+        }
+
+        .dork-example {
+            background: rgba(33, 37, 41, 0.5);
+            border-left: 3px solid var(--primary-color);
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Fira Code', monospace;
+            margin: 1rem 0;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .copy-btn {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 0.5rem;
+            min-width: 40px;
+        }
+
+        .table-responsive {
+            margin-bottom: 1rem;
+        }
+
+        .table td {
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .table code {
+            display: inline-block;
+            margin-right: 0.5rem;
+            word-break: break-all;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                padding: 1rem 0;
+            }
+            .nav-link {
+                padding: 0.75rem 1rem;
+                margin: 0.2rem 0;
+            }
+            .dork-example {
+                padding-right: 4rem;
+            }
+            .copy-btn {
+                padding: 0.3rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .dork-card {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Professional Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="image/cendrawasih.png" alt="CendrawasihSec Logo" class="me-2">
+                <span>CendrawasihSec</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                            <i class="fas fa-shield-alt me-1"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-project-diagram me-1"></i>Projects
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="gdork.html"><i class="fas fa-bug me-2"></i>Google Dork</a></li>
+                            <li><a class="dropdown-item" href="SQL.html"><i class="fas fa-sword me-2"></i>SQL Injectio</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-shield me-2"></i>Defensive</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-plus me-2"></i>More Projects</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" action="https://www.google.com/search" method="GET" target="_blank">
+                    <div class="input-group">
+                        <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5 mt-5">
+        <h1 class="text-center text-success mb-5">Google Dork Cheat Sheet</h1>
+        
+        <!-- Introduction Section -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <div class="dork-card">
+                    <h2 class="text-success mb-4">Apa itu Google Dork?</h2>
+                    <p class="text-light">Google Dork adalah teknik pencarian khusus menggunakan operator pencarian Google untuk menemukan informasi spesifik yang mungkin tidak mudah ditemukan melalui pencarian biasa. Teknik ini sering digunakan dalam penetration testing dan information gathering.</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Peringatan:</strong> Gunakan teknik ini dengan bijak dan etis. Jangan menggunakan untuk aktivitas ilegal atau merugikan pihak lain.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Basic Operators Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Operator Dasar</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="dork-card">
+                        <h3 class="text-success">intext:</h3>
+                        <p class="text-light">Mencari halaman yang mengandung teks tertentu di dalam kontennya.</p>
+                        <div class="dork-example mb-3">
+                            <code>intext:"password" filetype:txt</code>
+                            <button class="copy-btn float-end" onclick="navigator.clipboard.writeText('intext:"password" filetype:txt')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <p class="text-light">Mencari file txt yang mengandung kata "password"</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="dork-card">
+                        <h3 class="text-success">site:</h3>
+                        <p class="text-light">Membatasi pencarian pada domain atau situs tertentu.</p>
+                        <div class="dork-example mb-3">
+                            <code>site:example.com intext:admin</code>
+                            <button class="copy-btn float-end" onclick="navigator.clipboard.writeText('site:example.com intext:admin')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <p class="text-light">Mencari halaman yang mengandung kata "admin" di domain example.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Operators Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Operator Lanjutan</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="dork-card">
+                        <h3 class="text-success">filetype:</h3>
+                        <p class="text-light">Mencari file dengan tipe tertentu.</p>
+                        <div class="dork-example mb-3">
+                            <code>filetype:pdf site:gov.id confidential</code>
+                            <button class="copy-btn float-end" onclick="navigator.clipboard.writeText('filetype:pdf site:gov.id confidential')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <p class="text-light">Mencari file PDF yang mengandung kata "confidential" di situs pemerintah Indonesia</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="dork-card">
+                        <h3 class="text-success">intitle:</h3>
+                        <p class="text-light">Mencari halaman dengan judul tertentu.</p>
+                        <div class="dork-example mb-3">
+                            <code>intitle:"index of" intext:config</code>
+                            <button class="copy-btn float-end" onclick="navigator.clipboard.writeText('intitle:"index of" intext:config')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <p class="text-light">Mencari direktori yang mengandung file konfigurasi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security-focused Dorks Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Dork untuk Keamanan</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="dork-card">
+                        <h3 class="text-success">Exposed Database Files</h3>
+                        <p class="text-light">Mencari file database yang terekspos.</p>
+                        <div class="dork-example mb-3">
+                            <code>ext:sql | ext:dbf | ext:mdb intext:password</code>
+                            <button class="copy-btn float-end" onclick="navigator.clipboard.writeText('ext:sql | ext:dbf | ext:mdb intext:password')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <p class="text-light">Mencari file database yang mungkin mengandung informasi password</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="dork-card">
+                        <h3 class="text-success">Login Pages</h3>
+                        <p class="text-light">Mencari halaman login yang mungkin rentan.</p>
+                        <div class="dork-example mb-3">
+                            <code>inurl:login site:target.com</code>
+                            <button class="copy-btn float-end" onclick="navigator.clipboard.writeText('inurl:login site:target.com')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <p class="text-light">Mencari halaman login di domain target.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kombinasi Dork Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Kombinasi Dork</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="dork-card">
+                        <h3 class="text-success">Contoh Kombinasi Efektif</h3>
+                        <p class="text-light">Beberapa contoh kombinasi dork yang sering digunakan:</p>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Tujuan</th>
+                                        <th>Dork</th>
+                                        <th>Penjelasan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mencari File Sensitif</td>
+                                        <td>
+                                            <code>site:target.com filetype:pdf intext:(confidential | secret | private)</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:target.com filetype:pdf intext:(confidential | secret | private)')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari dokumen PDF yang mengandung kata-kata sensitif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari Panel Admin</td>
+                                        <td>
+                                            <code>site:target.com inurl:(admin | administrator | webadmin | cpanel | dashboard)</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:target.com inurl:(admin | administrator | webadmin | cpanel | dashboard)')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari berbagai jenis halaman admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>File Konfigurasi</td>
+                                        <td>
+                                            <code>site:target.com ext:(xml | conf | cnf | reg | inf | rdp | cfg | txt | ora | ini)</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:target.com ext:(xml | conf | cnf | reg | inf | rdp | cfg | txt | ora | ini)')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari berbagai jenis file konfigurasi</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Pro Dorks Section -->
+        <section class="mb-5">
+            <h2 class="section-title">Dork Pro Level</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="dork-card">
+                        <h3 class="text-success">Dork Tingkat Lanjut untuk Profesional</h3>
+                        <p class="text-light">Berikut adalah contoh dork tingkat lanjut yang sering digunakan oleh para profesional:</p>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Tujuan</th>
+                                        <th>Dork</th>
+                                        <th>Penjelasan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mencari Exposed API Keys</td>
+                                        <td>
+                                            <code>intitle:"index of" intext:("api_key" | "client_secret" | "apikey" | "token") -inurl:(jsp|php|asp)</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('intitle:"index of" intext:("api_key" | "client_secret" | "apikey" | "token") -inurl:(jsp|php|asp)')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari direktori yang mungkin mengekspos API keys dan token</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Backup Database</td>
+                                        <td>
+                                            <code>site:target.com ext:(sql|bak|bkp|old|backup|dump|zip|rar) intext:("sql dump" | "backup" | "database")</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:target.com ext:(sql|bak|bkp|old|backup|dump|zip|rar) intext:("sql dump" | "backup" | "database")')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari file backup database yang mungkin terekspos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Log Sensitif</td>
+                                        <td>
+                                            <code>site:target.com ext:log (username | password | login | "access key" | "secret key")</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:target.com ext:log (username | password | login | "access key" | "secret key")')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari file log yang mungkin mengandung informasi sensitif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari Endpoint GraphQL</td>
+                                        <td>
+                                            <code>site:target.com (inurl:"graphql" | inurl:"graphiql" | inurl:"/api/graphql" | inurl:"/graphql/console") -inurl:git</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:target.com (inurl:"graphql" | inurl:"graphiql" | inurl:"/api/graphql" | inurl:"/graphql/console") -inurl:git')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari endpoint GraphQL yang mungkin dapat diakses dan dieksploitasi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Konfigurasi AWS</td>
+                                        <td>
+                                            <code>site:s3.amazonaws.com intext:("access_key" | "secret_key" | "aws_secret")</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:s3.amazonaws.com intext:("access_key" | "secret_key" | "aws_secret")')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari file konfigurasi AWS yang mungkin mengekspos kredensial</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Environment (.env)</td>
+                                        <td>
+                                            <code>intitle:"index of" intext:".env" | filetype:env | ext:env</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('intitle:"index of" intext:".env" | filetype:env | ext:env')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari file environment yang mungkin mengandung kredensial dan konfigurasi sensitif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Docker</td>
+                                        <td>
+                                            <code>intitle:"index of" ("Dockerfile" | "docker-compose.yml") intext:password</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('intitle:"index of" ("Dockerfile" | "docker-compose.yml") intext:password')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari file konfigurasi Docker yang mungkin mengandung kredensial</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Jenkins</td>
+                                        <td>
+                                            <code>intitle:"Dashboard [Jenkins]" inurl:"jenkins" -site:jenkins.io</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('intitle:"Dashboard [Jenkins]" inurl:"jenkins" -site:jenkins.io')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari instance Jenkins yang mungkin tidak terlindungi dengan baik</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Kubernetes</td>
+                                        <td>
+                                            <code>intitle:"index of" ("kubeconfig" | ".kube/config") intext:token</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('intitle:"index of" ("kubeconfig" | ".kube/config") intext:token')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari file konfigurasi Kubernetes yang mungkin mengekspos token dan kredensial</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File SSH Keys</td>
+                                        <td>
+                                            <code>intitle:"index of" "id_rsa" | "id_dsa" | ".ssh/authorized_keys"</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('intitle:"index of" "id_rsa" | "id_dsa" | ".ssh/authorized_keys"')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari kunci SSH yang mungkin terekspos secara publik</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Git</td>
+                                        <td>
+                                            <code>inurl:".git" intext:"index of /.git" -site:github.com</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('inurl:".git" intext:"index of /.git" -site:github.com')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari repositori Git yang terekspos yang mungkin mengandung informasi sensitif</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Terraform</td>
+                                        <td>
+                                            <code>ext:tf | ext:tfvars intext:("access_key" | "secret_key" | "password")</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('ext:tf | ext:tfvars intext:("access_key" | "secret_key" | "password")')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari file konfigurasi Terraform yang mungkin mengekspos kredensial cloud</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File WordPress Config</td>
+                                        <td>
+                                            <code>intitle:"index of" "wp-config.php.bak" | "wp-config.php.old" | "wp-config.php~"</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('intitle:"index of" "wp-config.php.bak" | "wp-config.php.old" | "wp-config.php~"')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari backup file konfigurasi WordPress yang mungkin mengandung kredensial database</td>
+                                    </tr>
+                                        </td>
+                                        <td>Mencari endpoint GraphQL yang mungkin dapat diakses</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File AWS</td>
+                                        <td>
+                                            <code>site:s3.amazonaws.com intext:target.com</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:s3.amazonaws.com intext:target.com')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari bucket S3 AWS yang mungkin terekspos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencari File Git</td>
+                                        <td>
+                                            <code>site:target.com inurl:".git" -github.com -gitlab.com</code>
+                                            <button class="copy-btn ms-2" onclick="navigator.clipboard.writeText('site:target.com inurl:\".git\" -github.com -gitlab.com')">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                        </td>
+                                        <td>Mencari repositori Git yang mungkin terekspos</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center text-light mt-5">
+            <p>© 2023 CendrawasihSec. Gunakan dengan bijak dan bertanggung jawab.</p>
+        </footer>
+    </main>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script>
+        // Copy button functionality with feedback
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const text = this.parentElement.querySelector('code').textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i>';
+                    this.style.backgroundColor = '#28a745';
+                    this.style.color = '#fff';
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.backgroundColor = 'transparent';
+                        this.style.color = '#28a745';
+                    }, 2000);
+                });
+            });
+        });
+
+        // Add scroll reveal effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.dork-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
