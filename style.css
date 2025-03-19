@@ -300,10 +300,20 @@
     display: inline-block;
     overflow: hidden;
     border-right: 0.15em solid var(--neon-green);
-    white-space: nowrap;
+    white-space: normal;
     margin: 0 auto;
     letter-spacing: 0.15em;
     animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@media (max-width: 768px) {
+    .glitch-text {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+        white-space: normal;
+        border-right: none;
+        animation: glitch-anim 2s infinite;
+    }
 }
 
 @keyframes typing {
@@ -508,9 +518,40 @@
 
 .about-header p {
     color: var(--matrix-text) !important;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Responsive styles for about-header */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 1.8rem;
+    }
+    .about-header p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    .about-header .typing-text {
+        white-space: normal;
+        border-right: none;
+        animation: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-header h1 {
+        font-size: 1.5rem;
+    }
+    .about-header p {
+        font-size: 0.85rem;
+    }
+    .about-header {
+        padding: 2rem 0;
     text-shadow: 0 0 5px var(--matrix-glow);
     opacity: 0.9;
     font-family: 'Fira Code', monospace;
+}
 }
 
 .card:hover {
