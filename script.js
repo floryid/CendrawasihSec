@@ -214,3 +214,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Typing Animation for Contact Header
+document.addEventListener('DOMContentLoaded', function() {
+    const typingTexts = document.querySelectorAll('.typing-text');
+    
+    typingTexts.forEach(text => {
+        const content = text.textContent;
+        text.textContent = '';
+        let charIndex = 0;
+        
+        function type() {
+            if (charIndex < content.length) {
+                text.textContent += content.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100); // Adjust typing speed here
+            } else {
+                // Add blinking cursor effect after typing
+                text.classList.add('typed');
+            }
+        }
+        
+        // Start typing with a slight delay for each element
+        setTimeout(() => type(), 500);
+    });
+});
