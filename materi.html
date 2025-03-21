@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Detective</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        .typewriter {
+            display: inline-block;
+            overflow: hidden;
+            color: yellow;
+            border-right: 3px solid #00ff00;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: 
+                typing 5.5s steps(30, end),
+                blink 0.55s step-end infinite;
+        }
+
+        @keyframes matrix {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+
+        main {
+            position: relative;
+            background: linear-gradient(180deg, 
+                rgba(0, 0, 0, 0.95) 0%,
+                rgba(0, 20, 0, 0.95) 50%,
+                rgba(0, 0, 0, 0.95) 100%);
+            background-size: 100% 200%;
+            animation: matrix 20s linear infinite;
+            overflow: hidden;
+        }
+
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(0deg,
+                rgba(0, 255, 0, 0.03) 0px,
+                rgba(0, 255, 0, 0.03) 1px,
+                transparent 1px,
+                transparent 2px);
+            pointer-events: none;
+            animation: scan 5s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .tool-card {
+            background: rgba(0, 20, 0, 0.8);
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+        }
+
+        .tool-card h3 {
+            color: #00ff00;
+            border-bottom: 1px solid #00ff00;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card p {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .tool-link {
+            color: #00ff00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .tool-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        .section-title {
+            color: #00ff00;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Professional Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="image/cendrawasih.png" alt="CendrawasihSec Logo" class="me-2">
+                <span>Pixel Detective</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                            <i class="fas fa-shield-alt me-1"></i>Services
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-project-diagram me-1"></i>Learn More
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gdork.html"><i class="fas fa-bug me-2"></i>Google Dork</a></li>
+                            <li><a class="dropdown-item" href="SQL.html"><i class="fas fa-database me-2"></i>SQL Injections</a></li>
+                            <li><a class="dropdown-item" href="git.html"><i class="fas fa-shield me-2"></i>Git Deploiyment</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="materi.html"><i class="fas fa-search me-2"></i>Reconnaissance Tools</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" action="https://www.google.com/search" method="GET" target="_blank">
+                    <div class="input-group">
+                        <input class="form-control" type="search" name="q" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5 mt-5">
+        <h1 class="text-center text-success mb-5"><span class="typewriter">Reconnaissance Tools & Techniques</span></h1>
+
+        <!-- Active Reconnaissance Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-radar me-2"></i>Active Reconnaissance</h3>
+            <p>Active reconnaissance involves direct interaction with the target system to gather information. Popular tools include:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://nmap.org" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Nmap - Network Mapper</a></li>
+                <li><a href="https://www.metasploit.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Metasploit Framework</a></li>
+                <li><a href="https://www.wireshark.org" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Wireshark</a></li>
+                <li><a href="https://github.com/projectdiscovery/nuclei" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Nuclei - Vulnerability Scanner</a></li>
+                <li><a href="https://github.com/OJ/gobuster" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Gobuster - Directory/File Enumeration</a></li>
+            </ul>
+        </section>
+
+        <!-- Passive Reconnaissance Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-eye-slash me-2"></i>Passive Reconnaissance</h3>
+            <p>Passive reconnaissance involves gathering information without direct interaction with the target. Tools include:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://www.shodan.io" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Shodan</a></li>
+                <li><a href="https://censys.io" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Censys</a></li>
+                <li><a href="https://www.google.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Google Dorks</a></li>
+                <li><a href="https://fofa.info" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>FOFA - Cyber Security Search Engine</a></li>
+                <li><a href="https://www.zoomeye.org" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>ZoomEye</a></li>
+            </ul>
+        </section>
+
+        <!-- WHOIS Information Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-info-circle me-2"></i>WHOIS Tools</h3>
+            <p>WHOIS lookup tools help gather domain registration and ownership information:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://whois.domaintools.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>DomainTools WHOIS</a></li>
+                <li><a href="https://www.whois.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>WHOIS.com</a></li>
+            </ul>
+        </section>
+
+        <!-- Domain Information Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-globe me-2"></i>Domain Information Groper (dig)</h3>
+            <p>DNS lookup utility for querying DNS servers:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://toolbox.googleapps.com/apps/dig/" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Google Dig Tool</a></li>
+                <li><a href="https://www.digwebinterface.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Dig Web Interface</a></li>
+            </ul>
+        </section>
+
+        <!-- Subdomain Enumeration Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-sitemap me-2"></i>Subdomain Enumeration</h3>
+            <p>Tools for discovering subdomains of a target domain:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/aboul3la/Sublist3r" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Sublist3r</a></li>
+                <li><a href="https://github.com/projectdiscovery/subfinder" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Subfinder</a></li>
+                <li><a href="https://github.com/OWASP/Amass" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>OWASP Amass</a></li>
+                <li><a href="https://github.com/tomnomnom/assetfinder" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Assetfinder</a></li>
+            </ul>
+        </section>
+
+        <!-- DNS Enumeration Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-network-wired me-2"></i>DNS Enumeration</h3>
+            <p>Tools for gathering DNS information and performing zone transfers:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/fwaeytens/dnsenum" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>DNSenum</a></li>
+                <li><a href="https://github.com/mschwager/fierce" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Fierce</a></li>
+            </ul>
+        </section>
+
+        <!-- Virtual Host Discovery Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-server me-2"></i>Virtual Host Discovery</h3>
+            <p>Tools for discovering virtual hosts on a target server:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/jobertabma/virtual-host-discovery" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Virtual Host Discovery</a></li>
+                <li><a href="https://github.com/ffuf/ffuf" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>FFUF</a></li>
+            </ul>
+        </section>
+
+        <!-- Fingerprinting Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-fingerprint me-2"></i>Fingerprinting</h3>
+            <p>Tools for identifying technologies and services running on target systems:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://www.wappalyzer.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Wappalyzer</a></li>
+                <li><a href="https://www.netcraft.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Netcraft</a></li>
+                <li><a href="https://builtwith.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>BuiltWith</a></li>
+            </ul>
+        </section>
+
+        <!-- Certificate Transparency Logs Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-certificate me-2"></i>Certificate Transparency Logs</h3>
+            <p>Tools for discovering subdomains and monitoring SSL/TLS certificates:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://crt.sh" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>crt.sh - Certificate Search</a></li>
+                <li><a href="https://transparencyreport.google.com/https/certificates" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Google CT Log</a></li>
+                <li><a href="https://developers.facebook.com/tools/ct/" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Facebook CT Monitor</a></li>
+            </ul>
+        </section>
+
+        <!-- WAF Detection Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-shield-alt me-2"></i>WAF Detection</h3>
+            <p>Tools for identifying and analyzing Web Application Firewalls:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/EnableSecurity/wafw00f" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Wafw00f - WAF Detection Tool</a></li>
+                <li><a href="https://github.com/Ekultek/WhatWaf" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>WhatWaf</a></li>
+            </ul>
+        </section>
+
+        <!-- Vulnerability Scanner Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-bug me-2"></i>Vulnerability Scanners</h3>
+            <p>Tools for automated security assessment and vulnerability detection:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://www.cirt.net/Nikto2" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Nikto - Web Server Scanner</a></li>
+                <li><a href="https://www.acunetix.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Acunetix</a></li>
+                <li><a href="https://www.tenable.com/products/nessus" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Nessus</a></li>
+                <li><a href="https://github.com/sullo/nikto" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Nikto3</a></li>
+                <li><a href="https://www.zaproxy.org" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>OWASP ZAP</a></li>
+                <li><a href="https://portswigger.net/burp" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Burp Suite</a></li>
+            </ul>
+        </section>
+
+        <!-- Google Dorking Section -->
+        <section class="tool-card">
+            <h3><i class="fab fa-google me-2"></i>Advanced Google Dorking</h3>
+            <p>Advanced search techniques for information gathering:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://www.exploit-db.com/google-hacking-database" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Google Hacking Database (GHDB)</a></li>
+                <li><a href="https://pentest-tools.com/information-gathering/google-hacking" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Pentest-Tools Google Hacking</a></li>
+            </ul>
+        </section>
+
+        <!-- Web Archives Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-history me-2"></i>Web Archives</h3>
+            <p>Tools for accessing historical versions of websites:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://archive.org/web/" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Internet Archive - Wayback Machine</a></li>
+                <li><a href="https://archive.is" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Archive.today</a></li>
+                <li><a href="https://www.cachedpages.com" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>Google Cache Viewer</a></li>
+            </ul>
+        </section>
+
+        <!-- Automated Recon Section -->
+        <section class="tool-card">
+            <h3><i class="fas fa-robot me-2"></i>Automated Reconnaissance</h3>
+            <p>All-in-one tools for automated information gathering:</p>
+            <ul class="list-unstyled">
+                <li><a href="https://github.com/thewhiteh4t/FinalRecon" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>FinalRecon - The Last Recon Tool You'll Need</a></li>
+                <li><a href="https://github.com/s0md3v/ReconDog" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>ReconDog</a></li>
+                <li><a href="https://github.com/laramies/theHarvester" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>theHarvester</a></li>
+                <li><a href="https://github.com/projectdiscovery/httpx" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>httpx - HTTP Toolkit</a></li>
+                <li><a href="https://github.com/lc/gau" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>getallurls (gau)</a></li>
+                <li><a href="https://github.com/hakluke/hakrawler" class="tool-link" target="_blank"><i class="fas fa-angle-right me-2"></i>hakrawler - Web Crawler</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="text-light py-5" style="background: rgba(0, 20, 0, 0.95); border-top: 1px solid #00ff00;">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About Column -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="text-success mb-3">About Pixel Detective</h5>
+                    <p class="text-light-50">We are dedicated to providing comprehensive cybersecurity education and tools for ethical hacking and digital defense.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-success me-3"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="#" class="text-success me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-success me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-success"><i class="fab fa-discord fa-lg"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-success mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-light text-decoration-none hover-success">Home</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-light text-decoration-none hover-success">Services</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-light text-decoration-none hover-success">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light text-decoration-none hover-success">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-success mb-3">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="gdork.html" class="text-light text-decoration-none hover-success">Google Dork Guide</a></li>
+                        <li class="mb-2"><a href="SQL.html" class="text-light text-decoration-none hover-success">SQL Injection Tutorial</a></li>
+                        <li class="mb-2"><a href="git.html" class="text-light text-decoration-none hover-success">Git Deployment</a></li>
+                        <li class="mb-2"><a href="materi.html" class="text-light text-decoration-none hover-success">Recon Tools</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-success mb-3">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope text-success me-2"></i>contact@pixeldetective.com</li>
+                        <li class="mb-2"><i class="fas fa-phone text-success me-2"></i>+1 (555) 123-4567</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt text-success me-2"></i>123 Cyber Street, Digital City</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div class="row mt-4 pt-3 border-top border-success">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Pixel Detective. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-light text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Reveal animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry =>
+                entry.isIntersecting && {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    document.querySelectorAll('.tool-card').forEach((card) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        observer.observe(card);
+    });
+</script>
+</body>
+</html>
