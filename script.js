@@ -186,6 +186,28 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScroll = currentScroll;
     });
 
+    // Image Slider Functionality
+    const slider = document.querySelector('.cyber-slider');
+    const slides = slider.querySelectorAll('.slide');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    if (slider) {
+        slider.addEventListener('mouseenter', () => {
+            slideInterval = setInterval(nextSlide, 2000);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            clearInterval(slideInterval);
+        });
+    }
+
     // Matrix effect for brand hover
     const brand = document.querySelector('.navbar-brand');
     const brandText = brand.querySelector('span');
